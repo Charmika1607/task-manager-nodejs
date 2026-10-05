@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TASK_TITLE}} — Task Details</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="/" class="brand">
+        <div class="brand-icon">&#10003;</div>
+        <div class="brand-info">
+          <span class="brand-title">Task Manager</span>
+          <span class="brand-subtitle">Node.js fs Storage</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <a href="/" class="btn btn-secondary">
+          <span>&larr;</span> Back to All Tasks
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Detail View -->
+  <main class="main-wrapper">
+    <div class="detail-card">
+      
+      <!-- Meta Information Tags -->
+      <div class="meta-tags">
+        <span class="meta-tag">
+          <span>&#128196;</span> File: <strong>{{TASK_FILENAME}}</strong>
+        </span>
+        <span class="meta-tag">
+          <span>&#128339;</span> Stored in: <code>/tasks</code>
+        </span>
+      </div>
+
+      <!-- Full Task Title -->
+      <h1 class="detail-title">{{TASK_TITLE}}</h1>
+
+      <!-- Full Description Content Box -->
+      <div class="detail-content-box">
+        <div class="content-label">Task Description</div>
+        <div class="detail-description">{{TASK_DESCRIPTION}}</div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="detail-actions">
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="/" class="btn btn-secondary">
+            <span>&larr;</span> Back to Tasks
+          </a>
+          <button type="button" class="btn btn-secondary" id="copyTaskBtn">
+            <span>&#128203;</span> Copy Details
+          </button>
+        </div>
+
+        <!-- Delete Button (calls POST /delete/:filename) -->
+        <form action="/delete/{{TASK_FILENAME_RAW}}" method="POST" onsubmit="return confirm('Are you sure you want to delete this task?');">
+          <button type="submit" class="btn btn-danger">
+            <span>&#128465;</span> Delete Task
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <span>College Project — Built with pure Node.js, Express, & File System (fs)</span>
+      </div>
+      <div class="tech-pills">
+        <span class="tech-pill">GET /task/:filename</span>
+        <span class="tech-pill">req.params.filename</span>
+        <span class="tech-pill">fs.readFile</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

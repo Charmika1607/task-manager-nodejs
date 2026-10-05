@@ -1,0 +1,4 @@
+Title: Operating Systems Scheduling Lab
+
+Description:
+Implement CPU scheduling algorithms in C. Focus on Round Robin with quantum 2ms, Shortest Job First, and Priority scheduling. Calculate Average Turnaround Time and Waiting Time.

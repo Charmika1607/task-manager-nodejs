@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Task — Task Manager</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="/" class="brand">
+        <div class="brand-icon">&#10003;</div>
+        <div class="brand-info">
+          <span class="brand-title">Task Manager</span>
+          <span class="brand-subtitle">Node.js fs Storage</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <a href="/" class="btn btn-secondary">
+          <span>&larr;</span> Back to All Tasks
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Form -->
+  <main class="main-wrapper">
+    <div class="form-card">
+      <div class="form-header">
+        <div class="form-title-group">
+          <h2>Create New Task</h2>
+          <p>This will be saved as an individual <code>.txt</code> file in the <code>/tasks</code> directory.</p>
+        </div>
+      </div>
+
+      <!-- Form sending POST request to /create handled by Express req.body -->
+      <form action="/create" method="POST" id="createTaskForm">
+        <!-- Task Title -->
+        <div class="form-group">
+          <div class="form-label">
+            <label for="taskTitle">Task Title *</label>
+            <span class="char-counter" id="titleCounter">0 / 80</span>
+          </div>
+          <input 
+            type="text" 
+            id="taskTitle" 
+            name="title" 
+            class="form-control" 
+            placeholder="e.g. Complete Operating Systems Assignment" 
+            maxlength="80" 
+            required 
+            autofocus
+          >
+          <div class="form-helper">A clear, concise title. This will be used to generate the safe filename.</div>
+        </div>
+
+        <!-- Task Description -->
+        <div class="form-group">
+          <div class="form-label">
+            <label for="taskDescription">Task Description *</label>
+            <span class="char-counter" id="descCounter">0 chars</span>
+          </div>
+          <textarea 
+            id="taskDescription" 
+            name="description" 
+            class="form-control" 
+            rows="7" 
+            placeholder="Write the full details, requirements, or steps for this task..." 
+            required
+          ></textarea>
+          <div class="form-helper">Detailed instructions or notes for this task.</div>
+        </div>
+
+        <!-- Actions -->
+        <div class="form-actions">
+          <a href="/" class="btn btn-secondary">Cancel</a>
+          <button type="submit" class="btn btn-primary" id="submitBtn">
+            <span>&#128190;</span> Save Task
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <span>College Project — Built with pure Node.js, Express, & File System (fs)</span>
+      </div>
+      <div class="tech-pills">
+        <span class="tech-pill">POST /create</span>
+        <span class="tech-pill">req.body</span>
+        <span class="tech-pill">fs.writeFile</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

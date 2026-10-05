@@ -1,0 +1,22 @@
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "description": "A clean, modern file-based Task Manager built with Node.js, Express.js, and File System (fs) module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "test": "node test_routes.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "fs-module",
+    "task-manager"
+  ],
+  "author": "College Student",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

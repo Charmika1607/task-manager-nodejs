@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager — Node.js & Express College Project</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="/" class="brand">
+        <div class="brand-icon">&#10003;</div>
+        <div class="brand-info">
+          <span class="brand-title">Task Manager</span>
+          <span class="brand-subtitle">Node.js fs Storage</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <a href="/create" class="btn btn-primary">
+          <span>+</span> Create New Task
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-wrapper">
+    <!-- Header with statistics and search bar -->
+    <section class="page-header">
+      <div class="header-top">
+        <div>
+          <h1 class="page-title">All Tasks</h1>
+          <p class="page-desc">Every task is stored as an individual <code>.txt</code> file using Node.js <code>fs</code> module.</p>
+        </div>
+        <div class="stats-badge">
+          <span>Total Tasks:</span>
+          <span class="stats-count" id="statsCount">{{TASK_COUNT}}</span>
+        </div>
+      </div>
+
+      <!-- Search & Controls Bar -->
+      <div class="controls-bar">
+        <div class="search-box">
+          <span class="search-icon">&#128269;</span>
+          <input 
+            type="text" 
+            id="taskSearch" 
+            class="search-input" 
+            placeholder="Search tasks by title or keyword..."
+            autocomplete="off"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Message shown when search filter yields 0 matches -->
+    <div id="noSearchResults" style="display: none; text-align: center; padding: 2.5rem; color: var(--text-muted);">
+      <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">No matching tasks found.</p>
+      <span style="font-size: 0.85rem; color: var(--text-dim);">Try clearing your search term.</span>
+    </div>
+
+    <!-- Task Cards Grid (Injected Dynamically from Node.js) -->
+    <div class="task-grid" id="taskGrid">
+      {{TASK_CARDS}}
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <span>College Project — Built with pure Node.js, Express, & File System (fs)</span>
+      </div>
+      <div class="tech-pills">
+        <span class="tech-pill">Node.js</span>
+        <span class="tech-pill">Express.js</span>
+        <span class="tech-pill">fs.readdir</span>
+        <span class="tech-pill">fs.readFile</span>
+        <span class="tech-pill">fs.writeFile</span>
+        <span class="tech-pill">fs.unlink</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

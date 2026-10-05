@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Task Not Found</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="/" class="brand">
+        <div class="brand-icon">&#10003;</div>
+        <div class="brand-info">
+          <span class="brand-title">Task Manager</span>
+          <span class="brand-subtitle">Node.js fs Storage</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <a href="/" class="btn btn-secondary">
+          <span>&larr;</span> Back to All Tasks
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Error Card -->
+  <main class="main-wrapper">
+    <div class="error-card">
+      <div class="error-badge">404</div>
+      <h2 class="error-title">{{ERROR_TITLE}}</h2>
+      <p class="error-desc">{{ERROR_MESSAGE}}</p>
+      <div>
+        <a href="/" class="btn btn-primary">
+          <span>&larr;</span> Return to Home Page
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <span>College Project — Built with pure Node.js, Express, & File System (fs)</span>
+      </div>
+      <div class="tech-pills">
+        <span class="tech-pill">HTTP 404</span>
+        <span class="tech-pill">Error Handling</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

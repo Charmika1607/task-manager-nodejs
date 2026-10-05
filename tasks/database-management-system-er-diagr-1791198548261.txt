@@ -1,0 +1,4 @@
+Title: Database Management System ER Diagram
+
+Description:
+Design an Entity-Relationship (ER) diagram for a Hospital Management System. Identify entities (Doctor, Patient, Appointment, Ward), attributes, primary keys, and relationships with cardinalities.
